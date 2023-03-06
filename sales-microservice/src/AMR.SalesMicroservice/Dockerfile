@@ -8,9 +8,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["sales-microservice/src/AMR.SalesMicroservice/AMR.SalesMicroservice.csproj", "sales-microservice/src/AMR.SalesMicroservice/"]
-COPY ["reports-microservice/src/AMR.ReportsMicroservice.Business/AMR.ReportsMicroservice.Business.csproj", "reports-microservice/src/AMR.ReportsMicroservice.Business/"]
 COPY ["shared/src/AMR.Shared/AMR.Shared.csproj", "shared/src/AMR.Shared/"]
-COPY ["reports-microservice/src/AMR.ReportsMicroservice.Infrastructure/AMR.ReportsMicroservice.Infrastructure.csproj", "reports-microservice/src/AMR.ReportsMicroservice.Infrastructure/"]
+COPY ["sales-microservice/src/AMR.SalesMicroservice.Business/AMR.SalesMicroservice.Business.csproj", "sales-microservice/src/AMR.SalesMicroservice.Business/"]
+COPY ["sales-microservice/src/AMR.SalesMicroservice.Infrastructure/AMR.SalesMicroservice.Infrastructure.csproj", "sales-microservice/src/AMR.SalesMicroservice.Infrastructure/"]
 RUN dotnet restore "sales-microservice/src/AMR.SalesMicroservice/AMR.SalesMicroservice.csproj"
 COPY . .
 WORKDIR "/src/sales-microservice/src/AMR.SalesMicroservice"

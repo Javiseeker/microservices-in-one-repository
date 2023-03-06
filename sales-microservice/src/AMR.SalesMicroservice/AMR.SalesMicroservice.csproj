@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\reports-microservice\src\AMR.ReportsMicroservice.Business\AMR.ReportsMicroservice.Business.csproj" />
     <ProjectReference Include="..\..\..\shared\src\AMR.Shared\AMR.Shared.csproj" />
+    <ProjectReference Include="..\AMR.SalesMicroservice.Business\AMR.SalesMicroservice.Business.csproj" />
   </ItemGroup>
 
 </Project>
