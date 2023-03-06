@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "AMR.SalesMicroservice.Tests.UnitTests": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:54645;http://localhost:54646"
+    }
+  }
+}
