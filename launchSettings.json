@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Start Services": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "amr.reportsmicroservice",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}/swagger",
+      "serviceActions": {
+        "amr.reportsmicroservice": "StartDebugging",
+        "amr.salesmicroservice": "StartDebugging"
+      }
+    }
+  }
+}

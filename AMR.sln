@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMR.SalesMicroservice", "sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMR.ReportsMicroservice", "reports-microservice\src\AMR.ReportsMicroservice\AMR.ReportsMicroservice.csproj", "{D15655B1-7349-4084-B2F7-7BDA715CBEE9}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{372FCD46-2E85-4306-BC49-F8F19C1C341D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{D15655B1-7349-4084-B2F7-7BDA715CBEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D15655B1-7349-4084-B2F7-7BDA715CBEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D15655B1-7349-4084-B2F7-7BDA715CBEE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{372FCD46-2E85-4306-BC49-F8F19C1C341D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{372FCD46-2E85-4306-BC49-F8F19C1C341D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{372FCD46-2E85-4306-BC49-F8F19C1C341D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{372FCD46-2E85-4306-BC49-F8F19C1C341D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
