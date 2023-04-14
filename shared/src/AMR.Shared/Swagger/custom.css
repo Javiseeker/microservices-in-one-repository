@@ -1,0 +1,15 @@
+﻿.swagger-ui .topbar .download-url-wrapper {
+    display: none;
+}
+
+.swagger-ui .info .base-url {
+    display: contents;
+}
+
+.swagger-ui .info hgroup.main a {
+    display: contents;
+}
+
+.swagger-ui .scheme-container {
+    display: contents
+}

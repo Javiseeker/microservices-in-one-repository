@@ -1,25 +1,65 @@
-var builder = WebApplication.CreateBuilder(args);
+using AMR.Shared;
+using Microsoft.AspNetCore.Diagnostics;
+using Serilog;
+using System.Net;
+using System.Reflection;
+using static AMR.Shared.Constants.Policies;
+using static System.Net.Mime.MediaTypeNames;
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+var app = ProgramConfig.Initialize<Program>(args, host =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    // Add microservice secrets
+    host.Configuration.AddUserSecrets(Assembly.GetExecutingAssembly(), true);
 
-app.UseHttpsRedirection();
+    // Add configuration and services related to the microservice here
 
-app.MapGet("ping", () =>
+}, "Reports Microservice");
+
+// Custom Error Handler per microservice
+app.UseExceptionHandler(exceptionHandlerApp =>
 {
-    return "pong";
-})
-.WithOpenApi();
+    exceptionHandlerApp.Run(async context =>
+    {
+        var exceptionHandlerPathFeature =
+            context.Features.Get<IExceptionHandlerPathFeature>();
+
+        if (exceptionHandlerPathFeature?.Error is Microsoft.Azure.Cosmos.CosmosException e)
+        {
+            context.Response.StatusCode = (int)e!.StatusCode;
+            context.Response.ContentType = Text.Plain;
+            Log.Logger.Error(e!.Message);
+            await context.Response.WriteAsync(Enum.GetName(typeof(HttpStatusCode), (int)e!.StatusCode));
+        }
+        else
+        {
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            context.Response.ContentType = Text.Plain;
+            Log.Logger.Error(exceptionHandlerPathFeature?.Error!.Message);
+            await context.Response.WriteAsync("An exception was thrown.");
+        }
+    });
+});
+
+// Add endpoints to the microservice here
+
+#region Dummy
+
+var dummySettingsRegion = app.NewVersionedApi("Dummy");
+var dummyV1 = dummySettingsRegion.MapGroup("ping").HasApiVersion(1.0);
+dummyV1.MapGet("", () => "pong").RequireAuthorization(GetRole(RolesEnum.PlantUserPolicy));
+var dummyV2 = dummySettingsRegion.MapGroup("ping").HasApiVersion(2.0);
+dummyV2.MapGet("", () =>
+{
+    return "pong v2";
+});
+
+#endregion Dummy
 
 app.Run();
+
+namespace AMR.ReportsMicroservice
+{
+    public partial class Program
+    {
+    }
+}
