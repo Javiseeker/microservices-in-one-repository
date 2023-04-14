@@ -13,7 +13,7 @@ var app = ProgramConfig.Initialize<Program>(args, host =>
 
     // Add configuration and services related to the microservice here
 
-}, "Reports Microservice");
+}, "Sales Microservice");
 
 // Custom Error Handler per microservice
 app.UseExceptionHandler(exceptionHandlerApp =>
