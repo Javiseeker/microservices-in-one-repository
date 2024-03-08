@@ -39,15 +39,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMR.SalesMicroservice.Tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMR.SalesMicroservice.Tests.UnitTests", "sales-microservice\tests\AMR.SalesMicroservice.Tests.UnitTests\AMR.SalesMicroservice.Tests.UnitTests.csproj", "{AC79C43F-6F01-4C5F-86D1-EF2ED5C4D4F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMR.SalesMicroservice.Business", "sales-microservice\src\AMR.SalesMicroservice.Business\AMR.SalesMicroservice.Business.csproj", "{8D9FF116-5400-44BE-BE63-62019EC57A48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMR.SalesMicroservice.Business", "sales-microservice\src\AMR.SalesMicroservice.Business\AMR.SalesMicroservice.Business.csproj", "{8D9FF116-5400-44BE-BE63-62019EC57A48}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMR.ReportsMicroservice.Tests.UnitTests", "reports-microservice\tests\AMR.ReportsMicroservice.Tests.UnitTests\AMR.ReportsMicroservice.Tests.UnitTests.csproj", "{5A721F5D-1CE0-4D37-8FE8-B4C8967509A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMR.SalesMicroservice", "sales-microservice\src\AMR.SalesMicroservice\AMR.SalesMicroservice.csproj", "{6D973B69-9EB8-4A91-BA27-01FB33C60D5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMR.SalesMicroservice", "sales-microservice\src\AMR.SalesMicroservice\AMR.SalesMicroservice.csproj", "{6D973B69-9EB8-4A91-BA27-01FB33C60D5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMR.ReportsMicroservice", "reports-microservice\src\AMR.ReportsMicroservice\AMR.ReportsMicroservice.csproj", "{D15655B1-7349-4084-B2F7-7BDA715CBEE9}"
-EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{372FCD46-2E85-4306-BC49-F8F19C1C341D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMR.ReportsMicroservice", "reports-microservice\src\AMR.ReportsMicroservice\AMR.ReportsMicroservice.csproj", "{D15655B1-7349-4084-B2F7-7BDA715CBEE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,10 +105,6 @@ Global
 		{D15655B1-7349-4084-B2F7-7BDA715CBEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D15655B1-7349-4084-B2F7-7BDA715CBEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D15655B1-7349-4084-B2F7-7BDA715CBEE9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{372FCD46-2E85-4306-BC49-F8F19C1C341D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{372FCD46-2E85-4306-BC49-F8F19C1C341D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{372FCD46-2E85-4306-BC49-F8F19C1C341D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{372FCD46-2E85-4306-BC49-F8F19C1C341D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

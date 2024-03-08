@@ -46,7 +46,7 @@ app.UseExceptionHandler(exceptionHandlerApp =>
 
 var dummySettingsRegion = app.NewVersionedApi("Dummy");
 var dummyV1 = dummySettingsRegion.MapGroup("ping").HasApiVersion(1.0);
-dummyV1.MapGet("", () => "pong").RequireAuthorization(GetRole(RolesEnum.PlantUserPolicy));
+dummyV1.MapGet("", () => "pong").RequireAuthorization(GetRole(RolesEnum.GeneralUserReadPolicy));
 var dummyV2 = dummySettingsRegion.MapGroup("ping").HasApiVersion(2.0);
 dummyV2.MapGet("", () =>
 {

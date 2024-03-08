@@ -47,14 +47,14 @@ public static class ProgramConfig
         builder.Services.UseSwagger<TProgram>();
 
         // Setup CosmosDB
-        builder.ConfigureCosmosDB();
+        // builder.ConfigureCosmosDB();
 
         // Setup Mapster Mapper
         builder.Services.ConfigureMapster();
 
         // Setup authentication and authorization
-        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddMicrosoftIdentityWebApi(builder.Configuration);
+        //builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        //.AddMicrosoftIdentityWebApi(builder.Configuration);
 
         builder.Services.AddAuthorization(options =>
         {
@@ -87,7 +87,7 @@ public static class ProgramConfig
 
         // Setup serilog global logger
         Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Override($"BFS.Fusion.Ms.{apiName}", LogEventLevel.Warning)
+            .MinimumLevel.Override($"{apiName}", LogEventLevel.Warning)
             .Enrich.WithExceptionDetails()
             .Enrich.WithEnvironmentUserName()
             .Enrich.WithEnvironmentName()
@@ -96,8 +96,8 @@ public static class ProgramConfig
             .CreateLogger();
 
         app.UseHttpsRedirection();
-        app.UseAuthentication();
-        app.UseAuthorization();
+        //app.UseAuthentication();
+        //app.UseAuthorization();
         app.UseResponseCompression();
 
         var env = app.Configuration.GetValue<string>("ASPNETCORE_ENVIRONMENT");

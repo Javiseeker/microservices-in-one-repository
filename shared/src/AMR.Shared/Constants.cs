@@ -27,14 +27,7 @@ public static class Constants
         public static Dictionary<RolesEnum, string[]> Roles { get; private set; } = new()
             {
                 { RolesEnum.GeneralUserReadPolicy, new string[]{ "General.Read" } },
-                { RolesEnum.GeneralUserWritePolicy, new string[]{ "General.Write" } },
-                { RolesEnum.FusionAdminPolicy, new string[]{ "Fusion.SystemUpdate" } },
-                { RolesEnum.LaborWasteUserPolicy, new string[]{ "LaborWaste.Update" } },
-                { RolesEnum.PlantUserPolicy, new string[]{ "Plant.Update" } },
-                { RolesEnum.ProfileUserPolicy, new string[]{ "Profile.Update" } },
-                { RolesEnum.MaterialUserPolicy, new string[]{ "Material.Update" } },
-                { RolesEnum.SalesUserReadPolicy, new string[]{ "Sales.Read" } },
-                { RolesEnum.SalesUserUpdatePolicy, new string[]{ "Sales.Update" } }
+                { RolesEnum.GeneralUserWritePolicy, new string[]{ "General.Write" } }
             };
 
         public static string GetRole(RolesEnum roleValue)
@@ -45,14 +38,7 @@ public static class Constants
         public enum RolesEnum
         {
             GeneralUserReadPolicy,
-            GeneralUserWritePolicy,
-            FusionAdminPolicy,
-            LaborWasteUserPolicy,
-            PlantUserPolicy,
-            ProfileUserPolicy,
-            MaterialUserPolicy,
-            SalesUserReadPolicy,
-            SalesUserUpdatePolicy
+            GeneralUserWritePolicy
         }
     }
 }
