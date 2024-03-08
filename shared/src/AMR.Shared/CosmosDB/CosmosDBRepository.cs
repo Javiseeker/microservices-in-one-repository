@@ -56,7 +56,7 @@ public class CosmosDBRepository<T> : ICosmosDBRepository<T> where T : class
             .Where(predicate)
             .ToFeedIterator();
 
-        List<T> results = new List<T>();
+        List<T> results = new();
         while (query.HasMoreResults)
         {
             FeedResponse<T> response = await query.ReadNextAsync();
